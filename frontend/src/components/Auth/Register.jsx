@@ -8,6 +8,7 @@ import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { Context } from "../../main";
+import "./Register.css";  // Reusing the same CSS file
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -16,7 +17,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
 
-  const { isAuthorized, setIsAuthorized, user, setUser } = useContext(Context);
+  const { isAuthorized, setIsAuthorized } = useContext(Context);
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -43,90 +44,104 @@ const Register = () => {
     }
   };
 
-  if(isAuthorized){
-    return <Navigate to={'/'}/>
+  if (isAuthorized) {
+    return <Navigate to={'/'} />
   }
 
-
   return (
-    <>
-      <section className="authPage">
-        <div className="container">
-          <div className="header">
-            <img src="/JobZeelogo.png" alt="logo" />
-            <h3>Create a new account</h3>
-          </div>
-          <form>
-            <div className="inputTag">
-              <label>Register As</label>
-              <div>
-                <select value={role} onChange={(e) => setRole(e.target.value)}>
+    <div className="LoginPageContainer">
+      <div className="LoginPageInnerContainer">
+        <div className="ImageContainer">
+          <img src="https://i.imgur.com/MYZd7of.png" className="GroupImage" alt="Group" />
+        </div>
+        <div className="LoginFormContainer">
+          <div className="LoginFormInnerContainer">
+            <header className="header">Register</header>
+            <header className="subHeader">
+              Join <b>Talent Sphere!</b> Please Enter your Details
+            </header>
+            <form onSubmit={handleRegister}>
+              <div className="inputContainer">
+                <label className="label" htmlFor="role">
+                  <FaRegUser className="labelIcon" />
+                  <span>Register As*</span>
+                </label>
+                <select
+                  id="role"
+                  className="input"
+                  value={role}
+                  onChange={(e) => setRole(e.target.value)}
+                >
                   <option value="">Select Role</option>
                   <option value="Employer">Employer</option>
                   <option value="Job Seeker">Job Seeker</option>
                 </select>
-                <FaRegUser />
               </div>
-            </div>
-            <div className="inputTag">
-              <label>Name</label>
-              <div>
+              <div className="inputContainer">
+                <label className="label" htmlFor="name">
+                  <FaPencilAlt className="labelIcon" />
+                  <span>Name*</span>
+                </label>
                 <input
                   type="text"
-                  placeholder="Zeeshan"
+                  className="input"
+                  id="name"
+                  placeholder="Enter your Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
-                <FaPencilAlt />
               </div>
-            </div>
-            <div className="inputTag">
-              <label>Email Address</label>
-              <div>
+              <div className="inputContainer">
+                <label className="label" htmlFor="phone">
+                  <FaPhoneFlip className="labelIcon" />
+                  <span>Phone*</span>
+                </label>
                 <input
-                  type="email"
-                  placeholder="zk@gmail.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <MdOutlineMailOutline />
-              </div>
-            </div>
-            <div className="inputTag">
-              <label>Phone Number</label>
-              <div>
-                <input
-                  type="number"
-                  placeholder="12345678"
+                  type="text"
+                  className="input"
+                  id="phone"
+                  placeholder="Enter your Phone Number"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                 />
-                <FaPhoneFlip />
               </div>
-            </div>
-            <div className="inputTag">
-              <label>Password</label>
-              <div>
+              <div className="inputContainer">
+                <label className="label" htmlFor="emailAddress">
+                  <MdOutlineMailOutline className="labelIcon" />
+                  <span>Email Address*</span>
+                </label>
+                <input
+                  type="email"
+                  className="input"
+                  id="emailAddress"
+                  placeholder="Enter your Email Address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+              <div className="inputContainer">
+                <label className="label" htmlFor="password">
+                  <RiLock2Fill className="labelIcon" />
+                  <span>Password*</span>
+                </label>
                 <input
                   type="password"
-                  placeholder="Your Password"
+                  className="input"
+                  id="password"
+                  placeholder="Enter your Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                <RiLock2Fill />
               </div>
-            </div>
-            <button type="submit" onClick={handleRegister}>
-              Register
-            </button>
-            <Link to={"/login"}>Login Now</Link>
-          </form>
+              <button className="LoginButton" type="submit">Register</button>
+            </form>
+            <Link to="/login" className="RegisterLink">
+              Already have an account? Login now
+            </Link>
+          </div>
         </div>
-        <div className="banner">
-          <img src="/register.png" alt="login" />
-        </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
 };
 

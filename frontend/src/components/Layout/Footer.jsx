@@ -1,30 +1,33 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../../main";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaYoutube, FaLinkedin } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 
 const Footer = () => {
+  const { isAuthorized } = useContext(Context);
+
   const footerData = {
     company: {
-      description: "Your company description here.",
+      description: "Connecting Talent with Opportunity Effortlessly!",
     },
     quickLinks: [
       { name: "Home", route: "/" },
-      { name: "About Us", route: "/about" },
+      { name: "All Jobs", route: "/job/getall" },
       { name: "Services", route: "/services" },
       { name: "Contact", route: "/contact" },
       { name: "Blog", route: "/blog" },
     ],
     socialMedia: {
-      facebook: "https://www.facebook.com/profile.php?id=100030535123397",
-      youtube: "https://www.youtube.com/@CodeWithZeeshu",
+      facebook: "https://www.facebook.com",
+      youtube: "https://www.youtube.com",
       linkedin: "https://www.linkedin.com",
-      instagram: "https://www.instagram.com/z_4_zeeshuuu/",
+      instagram: "https://www.instagram.com",
     },
     contact: {
       phone: "+1234567890",
       email: "info@example.com",
-      address: "123 Street, City, Country",
+      address: "sector-2,Noida,UP",
     },
   };
 
@@ -32,15 +35,19 @@ const Footer = () => {
     window.location.href = route;
   };
 
+  if (!isAuthorized) {
+    return null; // Hide footer when not authorized
+  }
+
   return (
-    <footer style={{ backgroundColor: "#0A1B29" }}>
+    <footer className="footerShow" style={{ backgroundColor: "black" }}>
       <div className="container-fluid">
         <div className="row py-4">
           <div className="col-12 col-sm-4 text-center text-white mt-4">
             <img
-              src="https://templatekit.tokomoo.com/doorkit/wp-content/uploads/sites/53/2021/12/conder-logo.png"
+              src="https://talentsphere.ca/files/logo.png"
               alt="Company Logo"
-              style={{ maxWidth: "150px" }}
+              style={{ maxWidth: "200px" }}
               className="mx-auto"
             />
             <p className="mt-3">{footerData.company.description}</p>
@@ -98,14 +105,15 @@ const Footer = () => {
       </div>
       <div className="container-fluid">
         <div className="row justify-content-between align-items-center px-3">
-          <div className="col-12 col-sm-6 text-left text-white">
+          <div className="col-12 col-sm-4 text-left text-white">
             <p className="mb-0">All rights reserved © 2024</p>
           </div>
-          <div className="col-12 col-sm-6 text-right text-white">
+          <div className="col-13 col-sm-4"></div>
+          <div className="col-12 col-sm-4 text-right text-white">
             <div className="d-inline mx-2" onClick={() => navigateTo("terms")} style={{ cursor: "pointer" }}>
               Terms of Service
             </div>
-            <div className="d-inline mx-2" onClick={() => navigateTo("privacy")} style={{ cursor: "pointer" }}>
+            <div className="d-inline mx-4" onClick={() => navigateTo("privacy")} style={{ cursor: "pointer" }}>
               Privacy Policy
             </div>
           </div>

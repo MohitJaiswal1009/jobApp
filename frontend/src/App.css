@@ -196,31 +196,11 @@ p {
 }
 
 .footerShow {
-  background: #18191c;
-  display: flex;
-  justify-content: space-between;
-  padding: 25px 120px;
-  align-items: center;
+  background-color: #18191c;
 }
-.footerShow div {
-  display: flex;
-  gap: 12px;
-  font-size: 16px;
-  color: #f1f3f6;
-}
-.footerShow div a {
-  font-size: 20px;
-  text-decoration: none;
-  color: #f1f3f6;
-}
-.footerShow div a:hover {
-  color: #2d5649;
-  transform: scale(1.2);
-  transition: all 0.3s;
-}
-.footerHide {
-  display: none;
-}
+ 
+
+
 @media (max-width: 830px) {
   .footerShow {
     padding: 25px 45px;
@@ -1149,8 +1129,8 @@ p {
   }
 }
 nav {
-  background: #18191c;
-  padding: 0 20px;
+  background: #030714;
+  padding: 0;
 }
 nav .container {
   max-width: 1500px;
@@ -1160,8 +1140,8 @@ nav .container {
   justify-content: space-between;
 }
 nav .container .logo {
-  width: 120px;
-  height: 120px;
+  width: 220px;
+  height: 140px;
 }
 nav .container .logo img {
   width: 100%;
@@ -1183,21 +1163,22 @@ nav .menu button {
 }
 nav .menu button:hover {
   color: #f1f3f6;
-  background: #184235;
+  background: #c5700f;
   transition: all 0.3s;
   cursor: pointer;
   font-weight: 500;
+  border-radius: 50%;
   border: 1px solid #184235;
 }
 nav .menu li a {
-  color: #f1f3f6;
+  color: #c27619;
   text-decoration: none;
   font-weight: 300;
   font-size: 20px;
   position: relative;
 }
 nav .menu li a:hover {
-  color: #2d5649;
+  color: #884ee5;
   transition: all 0.3s;
 }
 nav .menu li a::before {

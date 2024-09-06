@@ -1,0 +1,71 @@
+.howitworks-container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 2rem 1rem;
+    background-color: #f8fafc;
+  }
+  
+  .howitworks-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+  }
+  
+  .howitworks-banner {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    gap: 1rem;
+  }
+  
+  .howitworks-card {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    flex: 1;
+    min-width: 280px;
+    max-width: 320px;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+  
+  .howitworks-card:hover {
+    transform: translateY(-10px);
+    background-color: #f1f5f9;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  .howitworks-icon {
+    font-size: 4rem;
+    color: #3498db;
+    margin-bottom: 1.5rem;
+  }
+  
+  .howitworks-card h4 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 1rem;
+  }
+  
+  .howitworks-card p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 768px) {
+    .howitworks-banner {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .howitworks-card {
+      max-width: 100%;
+    }
+  }
+  

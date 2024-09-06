@@ -1,0 +1,153 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.main-container {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    min-width: 100vw;
+    min-height: 100vh;
+    position: relative;
+}
+
+.blur-circle1, .blur-circle2 {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(to bottom, white, pink);
+    border-radius: 50%;
+    filter: blur(120px);
+    position: absolute;
+}
+
+.blur-circle1 {
+    left: 10%;
+    top: 20%;
+}
+
+.blur-circle2 {
+    right: 10%;
+    top: 20%;
+    filter: blur(100px);
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* Landing Page */
+.landing-page .content .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 140px;
+    min-height: calc(100vh - 80px);
+}
+
+@media (max-width: 767px) {
+    .landing-page .content .container {
+        gap: 0;
+        min-height: calc(100vh - 101px);
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+}
+
+@media (max-width: 767px) {
+    .landing-page .content .info {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+}
+
+.landing-page .content .info h1 {
+    color: #bbbbbb;
+    font-size: 44px;
+}
+
+.landing-page .content .info p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 15px;
+    color: #b3b3b3;
+}
+
+.landing-page .content .info button {
+    border: 0;
+    padding: 10px 20px;
+    background-color: #f9aa0f;
+    color: #07192c;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.landing-page .content .image .main-image {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Stats Section */
+.stats-section {
+    background-color: #07192c;
+    color: #f9aa0f;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.stat {
+    margin: 20px;
+}
+
+.stat h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.stat p {
+    font-size: 18px;
+}
+
+@media (max-width: 767px) {
+    .stat h2 {
+        font-size: 28px;
+    }
+
+    .stat p {
+        font-size: 16px;
+    }
+}

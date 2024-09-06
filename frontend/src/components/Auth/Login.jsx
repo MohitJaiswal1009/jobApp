@@ -6,6 +6,7 @@ import { FaRegUser } from "react-icons/fa";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { Context } from "../../main";
+import "./Login.css";  // Make sure to import your CSS file
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -37,65 +38,86 @@ const Login = () => {
     }
   };
 
-  if(isAuthorized){
-    return <Navigate to={'/'}/>
+  if (isAuthorized) {
+    return <Navigate to={'/'} />
   }
 
   return (
-    <>
-      <section className="authPage">
-        <div className="container">
-          <div className="header">
-            <img src="/JobZeelogo.png" alt="logo" />
-            <h3>Login to your account</h3>
-          </div>
-          <form>
-            <div className="inputTag">
-              <label>Login As</label>
-              <div>
-                <select value={role} onChange={(e) => setRole(e.target.value)}>
+    <div className="LoginPageContainer">
+      <div className="LoginPageInnerContainer">
+        <div className="ImageContainer">
+          <img src="https://i.imgur.com/MYZd7of.png" className="GroupImage" alt="Group" />
+        </div>
+        <div className="LoginFormContainer">
+          <div className="LoginFormInnerContainer">
+            {/* <div className="LogoContainer">
+              <img src="https://talentsphere.ca/files/logo.png" className="logo" alt="logo" />
+            </div> */}
+            <header className="header">Log in</header>
+            <header className="subHeader">
+              Welcome to <b>Talent Sphere!</b> Please Enter your Details
+            </header>
+            <form onSubmit={handleLogin}>
+              <div className="inputContainer">
+                <label className="label" htmlFor="role">
+                  <FaRegUser className="labelIcon" />
+                  <span>Login As*</span>
+                </label>
+                <select
+                  id="role"
+                  className="input"
+                  value={role}
+                  onChange={(e) => setRole(e.target.value)}
+                >
                   <option value="">Select Role</option>
                   <option value="Employer">Employer</option>
                   <option value="Job Seeker">Job Seeker</option>
                 </select>
-                <FaRegUser />
               </div>
-            </div>
-            <div className="inputTag">
-              <label>Email Address</label>
-              <div>
+              <div className="inputContainer">
+                <label className="label" htmlFor="emailAddress">
+                  <MdOutlineMailOutline className="labelIcon" />
+                  <span>Email Address*</span>
+                </label>
                 <input
                   type="email"
-                  placeholder="zk@gmail.com"
+                  className="input"
+                  id="emailAddress"
+                  placeholder="Enter your Email Address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
-                <MdOutlineMailOutline />
               </div>
-            </div>
-            <div className="inputTag">
-              <label>Password</label>
-              <div>
+              <div className="inputContainer">
+                <label className="label" htmlFor="password">
+                  <RiLock2Fill className="labelIcon" />
+                  <span>Password*</span>
+                </label>
                 <input
                   type="password"
-                  placeholder="Your Password"
+                  className="input"
+                  id="password"
+                  placeholder="Enter your Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                <RiLock2Fill />
               </div>
-            </div>
-            <button type="submit" onClick={handleLogin}>
-              Login
-            </button>
-            <Link to={"/register"}>Register Now</Link>
-          </form>
+              <div className="OptionsContainer">
+                <div className="checkboxContainer">
+                  <input type="checkbox" id="RememberMe" className="checkbox" />
+                  <label htmlFor="RememberMe">Remember me</label>
+                </div>
+                <Link to="#" className="ForgotPasswordLink">Forgot Password?</Link>
+              </div>
+              <button className="LoginButton" type="submit">Login</button>
+            </form>
+            <Link to="/register" className="RegisterLink">
+              Don't have an account? Register now
+            </Link>
+          </div>
         </div>
-        <div className="banner">
-          <img src="/login.png" alt="login" />
-        </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
 };
 
