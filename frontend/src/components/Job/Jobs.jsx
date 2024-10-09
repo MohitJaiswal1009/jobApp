@@ -51,7 +51,7 @@ const Jobs = () => {
               <div className="job-card" key={job._id}>
                 <div className="job-card-header">
                   <h2>{job.title}</h2>
-                  <p className="location">{job.country}</p>
+                  <p className="location">{job.company}</p>
                 </div>
                 <div className="job-card-body">
                   <p className="job-description">

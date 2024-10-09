@@ -131,17 +131,17 @@ const MyJobs = () => {
                           />
                         </div>
                         <div>
-                          <span>City:</span>
+                          <span>Company:</span>
                           <input
                             type="text"
                             disabled={
                               editingMode !== element._id ? true : false
                             }
-                            value={element.city}
+                            value={element.company}
                             onChange={(e) =>
                               handleInputChange(
                                 element._id,
-                                "city",
+                                "company",
                                 e.target.value
                               )
                             }

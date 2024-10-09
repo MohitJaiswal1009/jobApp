@@ -6,6 +6,7 @@ import HeroSection from "./HeroSection";
 import HowItWorks from "./HowItWorks";
 import PopularCategories from "./PopularCategories";
 import PopularCompanies from "./PopularCompanies";
+import Recruiters from "./Recruiter";
 
 const Home = () => {
   const { isAuthorized } = useContext(Context);
@@ -19,6 +20,7 @@ const Home = () => {
         <HowItWorks />
         <PopularCategories />
         <PopularCompanies />
+        <Recruiters/>
       </section>
     </>
   );

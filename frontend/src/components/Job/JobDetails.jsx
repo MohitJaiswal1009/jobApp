@@ -43,7 +43,7 @@ const JobDetails = () => {
             Country: <span>{job.country}</span>
           </p>
           <p>
-            City: <span>{job.city}</span>
+            Comapny: <span>{job.company}</span>
           </p>
           <p>
             Location: <span>{job.location}</span>

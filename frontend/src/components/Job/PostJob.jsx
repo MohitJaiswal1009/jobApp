@@ -10,7 +10,7 @@ const PostJob = () => {
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [country, setCountry] = useState("");
-  const [city, setCity] = useState("");
+  const [company, setCompany] = useState(""); // Changed here
   const [location, setLocation] = useState("");
   const [salaryFrom, setSalaryFrom] = useState("");
   const [salaryTo, setSalaryTo] = useState("");
@@ -40,7 +40,7 @@ const PostJob = () => {
               description,
               category,
               country,
-              city,
+              company,
               location,
               fixedSalary,
             }
@@ -49,7 +49,7 @@ const PostJob = () => {
               description,
               category,
               country,
-              city,
+              company,
               location,
               salaryFrom,
               salaryTo,
@@ -84,7 +84,7 @@ const PostJob = () => {
               src="https://img.freepik.com/premium-photo/hr-managers-choosing-best-candidate-work-position-using-huge-magnifying-glass_207634-16259.jpg?ga=GA1.1.1784979297.1713721419&semt=ais_hybrid"
               alt="Post Job"
               className="img-fluid rounded"
-              style={{ maxWidth: "100%", maxheight: "500px" }}
+              style={{ maxWidth: "100%", maxHeight: "500px" }}
             />
           </div>
           <div className="col-md-8">
@@ -142,9 +142,9 @@ const PostJob = () => {
                 <div className="mb-3">
                   <input
                     type="text"
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)}
-                    placeholder="City"
+                    value={company}
+                    onChange={(e) => setCompany(e.target.value)} // Changed here
+                    placeholder="Company Name"
                     className="form-control"
                   />
                 </div>
