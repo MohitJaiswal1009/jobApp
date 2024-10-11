@@ -1,5 +1,5 @@
 # Job Portal Application
-
+ 
 This is a Job Portal Application built with modern web technologies to connect employers and job seekers. Employers can post jobs and manage applications, while job seekers can apply to jobs and submit their resumes.
 
 ---
