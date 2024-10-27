@@ -3,6 +3,13 @@
 This is a Job Portal Application built with modern web technologies to connect employers and job seekers. Employers can post jobs and manage applications, while job seekers can apply to jobs and submit their resumes.
 
 ---
+## Access the Application
+
+To access the Job Portal Application, visit the following link:
+
+[https://talentspherefront.onrender.com/login](https://talentspherefront.onrender.com/)
+
+This link will take you directly to the login page, where you can register and start using the application based on your role (Employer or Job Seeker).
 
 ## Features
 
